@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+        DownloadTray Color Palette
+        
+        Dark-mode-first design inspired by macOS activity monitors and iOS Live Activities.
+        Uses HSL-tuned colors — no plain red/green/blue (BUILD-SPEC §9 UX polish).
+    -->
+
+    <!-- ── Background layers ──────────────────────────────────────────── -->
+    <!-- Primary card background: near-black with slight blue-gray warmth -->
+    <Color x:Key="CardBgColor">#0F1117</Color>
+    <!-- Secondary / inset surface -->
+    <Color x:Key="SurfaceBgColor">#1A1D27</Color>
+    <!-- Border / separator -->
+    <Color x:Key="BorderColor">#2A2D3A</Color>
+    <!-- Subtle highlight on hover -->
+    <Color x:Key="HoverColor">#22253300</Color>
+
+    <!-- ── Accent colors ──────────────────────────────────────────────── -->
+    <!-- Primary accent: electric indigo — used for active download progress -->
+    <Color x:Key="AccentPrimaryColor">#6366F1</Color>
+    <!-- Accent glow (for progress bar animation) -->
+    <Color x:Key="AccentGlowColor">#818CF8</Color>
+    <!-- Success: seafoam green for completed downloads -->
+    <Color x:Key="SuccessColor">#34D399</Color>
+    <!-- Warning: warm amber for paused/stalled -->
+    <Color x:Key="WarningColor">#FBBF24</Color>
+    <!-- Error: rose for failed downloads -->
+    <Color x:Key="ErrorColor">#F87171</Color>
+    <!-- Starting: cool gray -->
+    <Color x:Key="StartingColor">#94A3B8</Color>
+
+    <!-- ── Typography colors ──────────────────────────────────────────── -->
+    <Color x:Key="TextPrimaryColor">#F1F5F9</Color>
+    <Color x:Key="TextSecondaryColor">#94A3B8</Color>
+    <Color x:Key="TextMutedColor">#475569</Color>
+
+    <!-- ── SolidColorBrush entries (used in XAML bindings) ─────────────── -->
+    <SolidColorBrush x:Key="CardBgBrush" Color="{StaticResource CardBgColor}" />
+    <SolidColorBrush x:Key="SurfaceBgBrush" Color="{StaticResource SurfaceBgColor}" />
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+    <SolidColorBrush x:Key="AccentPrimaryBrush" Color="{StaticResource AccentPrimaryColor}" />
+    <SolidColorBrush x:Key="AccentGlowBrush" Color="{StaticResource AccentGlowColor}" />
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}" />
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}" />
+    <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource ErrorColor}" />
+    <SolidColorBrush x:Key="StartingBrush" Color="{StaticResource StartingColor}" />
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondaryColor}" />
+    <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMutedColor}" />
+
+</ResourceDictionary>

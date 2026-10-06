@@ -1,0 +1,9 @@
+{
+  "name": "com.downloadtray.nativehost",
+  "description": "DownloadTray Native Messaging Host — receives download events from the browser extension.",
+  "path": "PLACEHOLDER_EXE_PATH",
+  "type": "stdio",
+  "allowed_origins": [
+    "PLACEHOLDER_EXTENSION_ORIGIN"
+  ]
+}

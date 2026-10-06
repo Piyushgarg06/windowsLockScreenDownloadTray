@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="DownloadTray.App.ActivityCard.ActivityCardWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DownloadTray.App.ActivityCard"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="DownloadTray">
+
+    <!-- Always-on-top borderless activity card, anchored to bottom-right of screen -->
+    <Grid x:Name="RootGrid"
+          Background="{StaticResource CardBgBrush}"
+          CornerRadius="12"
+          Padding="0"
+          MinWidth="300"
+          MaxWidth="360">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- ── Header bar ─────────────────────────────────────────────── -->
+        <Grid Grid.Row="0" Padding="16,12,16,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8">
+                <!-- Animated pulse dot for active state -->
+                <Ellipse x:Name="PulseDot"
+                         Width="8" Height="8"
+                         Fill="{StaticResource AccentPrimaryBrush}"
+                         VerticalAlignment="Center" />
+                <TextBlock Text="Downloads"
+                           Style="{StaticResource FilenameTextStyle}"
+                           FontSize="13"
+                           Foreground="{StaticResource TextSecondaryBrush}" />
+            </StackPanel>
+
+            <!-- Extension status indicator -->
+            <TextBlock x:Name="ExtensionStatusText"
+                       Grid.Column="1"
+                       Text="●"
+                       FontSize="8"
+                       VerticalAlignment="Center"
+                       Foreground="{StaticResource SuccessBrush}"
+                       ToolTipService.ToolTip="Browser extension connected" />
+        </Grid>
+
+        <!-- Separator -->
+        <Border Grid.Row="0"
+                Height="1"
+                Background="{StaticResource BorderBrush}"
+                Margin="0,44,0,0" />
+
+        <!-- ── Download list ────────────────────────────────────────────── -->
+        <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled"
+                      MaxHeight="400">
+            <ItemsControl x:Name="DownloadsList" Padding="8,8,8,8">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="local:DownloadCardViewModel">
+                        <local:DownloadCardControl Margin="0,0,0,4" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!-- ── Empty state ─────────────────────────────────────────────── -->
+        <StackPanel x:Name="EmptyState"
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Spacing="8"
+                    Padding="16,24"
+                    Visibility="Collapsed">
+            <TextBlock Text="↓"
+                       FontSize="32"
+                       HorizontalAlignment="Center"
+                       Foreground="{StaticResource TextMutedBrush}" />
+            <TextBlock Text="No active downloads"
+                       Style="{StaticResource StatusTextStyle}"
+                       HorizontalAlignment="Center" />
+        </StackPanel>
+
+    </Grid>
+</Window>

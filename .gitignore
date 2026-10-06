@@ -1,0 +1,77 @@
+## .gitignore for C# / .NET / WPF Windows project
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet packages
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# MSBuild
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# PowerShell
+*.ps1xml
+
+# Publish output
+[Pp]ublish/
+PublishProfiles/
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Temp files
+*.tmp
+*.temp
+~$*
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# dotnet tools
+.tool-versions
+
+# Runtime
+*.ilk
+*.meta
+*.pdb
+
+# Local compiled publish outputs (not for source control)
+bin_publish*/
+dist/
+
+# Large release binary (exceeds GitHub 100MB limit)
+Release-Package/DownloadTray/DownloadTray.exe
